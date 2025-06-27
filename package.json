@@ -53,5 +53,12 @@
     "@types/react": "~19.0.10",
     "gh-pages": "^6.3.0",
     "typescript": "~5.8.3"
+  },
+  "homepage": "https://weezy-creed.github.io/project/",
+  "web": {
+    "bundler": "metro",
+    "output": "single",
+    "favicon": "./assets/images/favicon.png",
+    "publicPath": "/<your-repo-name>/"
   }
 }
