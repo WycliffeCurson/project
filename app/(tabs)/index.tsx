@@ -59,11 +59,12 @@ export default function HomeScreen() {
 
         {/* Waste Categories */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Sort Your Waste</Text>
+          <Text style={[styles.sectionTitle, { paddingHorizontal: 0 }]}>Sort Your Waste</Text> {/* Remove extra horizontal padding */}
           <ScrollView 
             horizontal 
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.wasteTypesContainer}
+            style={{ minHeight: 110, paddingVertical: 8 }} // Ensure enough height and vertical padding
           >
             {wasteTypes.map((type) => (
               <WasteCard
@@ -100,7 +101,7 @@ export default function HomeScreen() {
         </TouchableOpacity>
 
         {/* Tips Carousel */}
-        <View style={styles.section}>
+        <View style={[styles.section, { marginBottom: 24 }]}> {/* Added marginBottom for spacing */}
           <Text style={styles.sectionTitle}>How to Sort Your Trash</Text>
           <TipCarousel />
         </View>
@@ -210,6 +211,8 @@ const styles = StyleSheet.create({
   wasteTypesContainer: {
     paddingHorizontal: 24,
     gap: 16,
+    alignItems: 'center', // Center cards vertically
+    minHeight: 94, // Ensure enough height for cards
   },
   binsContainer: {
     paddingHorizontal: 24,
